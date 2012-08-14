@@ -4,7 +4,6 @@
  * User: vladvidican
  * Date: 7/26/12
  * Time: 4:45 PM
- * To change this template use File | Settings | File Templates.
  */
 class Model_Post
 {

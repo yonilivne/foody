@@ -1,21 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="he" lang="he" dir="ltr" xmlns:fb="http://www.facebook.com/2008/fbml">
+<!DOCTYPE html>
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <base href="<?php $config = Zend_Registry::get('config'); echo $config->url->base;?>"/>
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="stylesheet" href="css/progress.css" type="text/css">
-
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="assets/jquery.ui.touch-punch.min.js"></script>
-    <script type="text/javascript" src="assets/jquery.masonry.min.js"></script>
-    <script type="text/javascript" src="assets/expanding.js"></script>
-    <script type="text/javascript" src="assets/tiny_mce/tiny_mce.js" ></script >
-    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js" ></script >
-    <script type="text/javascript" src="assets/bootstrap/js/bootstrap-tooltip.js" ></script >
-    <script type="text/javascript" src="assets/fileuploader.js"></script>
-    <script type="text/javascript" src="assets/jquery.event.drop.js"></script>
+    <?php echo $this->headLink()
+                    ->appendStylesheet("assets/css/style.css")
+                    ->appendStylesheet("assets/css/libs/progress.css");
+          echo $this->headScript()->appendFile("assets/js/libs/jquery.ui.touch-punch.min.js")
+                                  ->appendFile("assets/js/libs/jquery.masonry.min.js")
+                                  ->appendFile("assets/js/libs/expanding.js")
+                                  ->appendFile("assets/js/libs/tiny_mce/tiny_mce.js")
+                                  ->appendFile("assets/js/libs/bootstrap/js/bootstrap.min.js")
+                                  ->appendFile("assets/js/libs/bootstrap/js/bootstrap-tooltip.js")
+                                  ->appendFile("assets/js/libs/fileuploader.js")
+                                  ->appendFile("assets/js/libs/jquery.event.drop.js");
+    ?>
     <link href='http://fonts.googleapis.com/css?family=Muli|Open+Sans' rel='stylesheet' type='text/css'>
 
     <meta name="ROBOTS" content="ALL" />

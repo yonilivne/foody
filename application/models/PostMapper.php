@@ -1,10 +1,8 @@
 <?php
 /**
- * Created by IntelliJ IDEA.
  * User: vladvidican
  * Date: 7/26/12
  * Time: 4:46 PM
- * To change this template use File | Settings | File Templates.
  */
 class Model_PostMapper
 {
@@ -30,11 +28,16 @@ class Model_PostMapper
         return $this->_dbTable;
     }
 
+    /**
+     * @description Save a post to the database
+     * @param Model_Post $post
+     * @return mixed
+     */
     public function save(Model_Post $post)
     {
         $data = $post->toArray();
         try {
-            if (null === ($id = $post->getId())) {
+            if (null == ($id = $post->getId())) {
                 unset($data['id']);
                 return $this->getDbTable()->insert($data);
             }else{
@@ -46,6 +49,10 @@ class Model_PostMapper
         }
     }
 
+    /**
+     * @description Return all posts in a database
+     * @return array
+     */
     public function fetchAll()
     {
         $result = $this->getDbTable()->fetchAll();
@@ -57,11 +64,16 @@ class Model_PostMapper
         return $entries;
     }
 
+    /**
+     * @description Find a post in the database by it's id
+     * @param $id
+     * @return Model_Post|null
+     */
     public function find($id)
     {
         $result = $this->getDbTable()->find($id);
         if (0 == count($result)) {
-            return;
+            return null;
         }
         $row = $result->current();
         $post = new Model_Post($row->toArray());

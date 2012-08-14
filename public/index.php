@@ -11,8 +11,8 @@ defined('APPLICATION_ENV')
 defined('PUBLIC_PATH')
     || define('PUBLIC_PATH', realpath(dirname(__FILE__) . '/../public'));
 
-defined('PICS_PATH')
-    || define('PICS_PATH', PUBLIC_PATH . '/pics');
+defined('IMAGES_PATH')
+    || define('IMAGES_PATH', PUBLIC_PATH . '/images');
 
 switch(APPLICATION_ENV){
     case "development":
@@ -40,5 +40,4 @@ $application = new Zend_Application(
     APPLICATION_ENV,
     APPLICATION_PATH . '/configs/application.ini'
 );
-$application->bootstrap()
-            ->run();
+$application->bootstrap()->run();

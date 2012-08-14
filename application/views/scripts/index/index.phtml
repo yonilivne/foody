@@ -1,5 +1,6 @@
 <?php
 $entries = $this->entries;
+$this->headScript()->appendFile("assets/js/index/index.js");
 ?>
 <!-- HEADER TOOLBAR -->
 
@@ -33,7 +34,7 @@ $entries = $this->entries;
             <?php
                 foreach($entries as $post):
             ?>
-            <div class="item type41"><a href="post/view/id/<?php echo $post->getId(); ?>" class="itemInner"><div class="thumb" style="background:url(pics/thumbs_index/<?php echo substr($post->getThumb(),0,140); ?>)center center no-repeat;"></div><span><div class="name"><?php echo $post->getTitle();?></div><div class="desc"><?php echo $post->getDescription(); ?></div></span></a>
+            <div class="item type41"><a href="post/view/id/<?php echo $post->getId(); ?>" class="itemInner"><div class="thumb" style="background:url(images/thumbs/<?php echo $post->getThumb(); ?>)center center no-repeat;"></div><span><div class="name"><?php echo $post->getTitle();?></div><div class="desc"><?php echo substr($post->getDescription(),0,140); ?></div></span></a>
                 <div class="likeBtns"><a title="Like" class="button ico like"><div class="icon"></div><div class="text">1623</div></a><a title="Comment" class="button ico comment"><div class="icon"></div><div class="text">104</div></a><a title="Repost" class="button ico repost"><div class="icon"></div><div class="text">43</div></a></div>
             </div>
             <?php
@@ -46,10 +47,7 @@ $entries = $this->entries;
 
     </div>
 
-
 </div>
 
-
-<script type="text/javascript" src="js/index/index.js"></script>
 
 
