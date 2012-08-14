@@ -1,0 +1,140 @@
+<div id="content">
+    <div class="centered">
+
+        <div class="fixedBackground"></div>
+        <!-- HEADER TOOLBAR -->
+
+        <h1 class="head fixedWidth">
+            <div class="innerWrap">
+                <div class="inner higher">
+
+                    <div class="postBar">
+                        <div class="container">
+                            <a id="addText" title="Text" class="postBtn">
+                                <div class="icn text"></div>
+                                <div class="txt">Text</div>
+                            </a>
+                            <a id="addImage" title="Image" class="postBtn">
+                                <div class="icn image"></div>
+                                <div class="txt">Image</div>
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </h1>
+
+
+        <div class="recipeMenuWrap">
+
+            <ul class="dropMenu">
+                <li><a id="addIngredients" class="postBtn">
+                    <div class="icn igredientlist"></div>
+                    <div class="txt">Ingredients</div>
+                </a></li>
+                <li><a id="addSteps" class="postBtn">
+                    <div class="icn steps"></div>
+                    <div class="txt">Steps</div>
+                </a></li>
+                <li><a id="addTimes" class="postBtn">
+                    <div class="icn times"></div>
+                    <div class="txt">Time</div>
+                </a></li>
+            </ul>
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div class="postContent">
+
+            <div class="mainCol">
+                <div class="postTitle">
+                    <input id="title" class="txt" type="text" placeholder="Title (optional)">
+                </div>
+            </div>
+
+            <div class="sideCol">
+                <div class="postButtons">
+                    <a id="post-btn" href="index.html" class="button btn red right">
+                        <div>Post</div>
+                    </a>
+                    <a href="index" class="button btn right">
+                        <div>Cancel</div>
+                    </a>
+                    <!--     	<a class="button btn center"><div>Preview</div></a> -->
+
+                </div>
+            </div>
+
+            <div class="mainCol">
+
+                <ul id="mainColSortable" class="colSortable">
+                    <div style="height:20px;"></div>
+                    <li class="postText postObject container editMode">
+                        <h3><a class="close" data-original-title="Delete">
+                            <div></div>
+                        </a><a class="reorder" data-original-title="Move">
+                            <div></div>
+                        </a>
+
+                            <div class="commitDiscard"><a class="commit" data-original-title="Done">
+                                <div></div>
+                            </a><a class="discard" data-original-title="Discard">
+                                <div></div>
+                            </a><a class="edit" data-original-title="Edit">
+                                <div></div>
+                            </a></div>
+                        </h3>
+                        <div class="expandingText" style="position: relative; "><textarea
+                            class="expanding expanding-init" placeholder="Enter text here..."
+                            style="position: absolute; height: 100%; resize: none; "></textarea>
+                            <pre class="textareaClone"
+                                 style="visibility: hidden; border: 0px solid; white-space: pre-wrap; line-height: 21px; font-size: 13px; font-family: Muli, 'Helvetica Neue', Helvetica, Arial, sans-serif; text-align: -webkit-auto; word-wrap: break-word; padding-left: 10px; padding-right: 10px; margin: 6px; "><div></div></pre>
+                        </div>
+                    </li>
+                    <li class="postImage image-upload postObject container editMode">
+                        <h3><a class="close" data-original-title="Delete">
+                            <div></div>
+                        </a><a class="reorder" data-original-title="Move">
+                            <div></div>
+                        </a>
+
+                            <div class="commitDiscard"><a class="commit" data-original-title="Done">
+                                <div></div>
+                            </a><a class="discard" data-original-title="Discard">
+                                <div></div>
+                            </a><a class="edit" data-original-title="Edit">
+                                <div></div>
+                            </a></div>
+                        </h3>
+                        <div class="uploadedPhoto"><img src="pics/thumbs/9.jpg"></div>
+                        <div class="uploadBox image0">Drop an image file here <br>- or -<br> Click to browse from your device
+                        </div>
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+            <div class="sideCol">
+
+                <ul id="sideColSortable" class="colSortable">
+                    <div style="height:20px;"></div>
+
+
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
+<div id="uploader" style="display: none"></div>
+<script type="text/javascript" src="js/post/add.js"></script>

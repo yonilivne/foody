@@ -1,0 +1,84 @@
+<?php
+    $post = $this->post;
+    $data = $this->data;
+?>
+<div id="content">
+    <div class="centered">
+
+        <div class="fixedBackground"></div>
+
+
+        <h1 class="head fixedWidth">
+            <div class="innerWrap">
+                <div class="inner">
+
+                    <div class="title left"><?php echo $post->getTitle(); ?></div>
+
+                </div>
+            </div>
+        </h1>
+
+        <!-- CONTENT -->
+
+        <div class="viewContent">
+
+            <div class="mainCol">
+
+                <ul>
+                    <?php
+                        ksort($data[0]);
+                        foreach($data[0] as $element):
+                           if($element instanceof Model_PostImage):
+                    ?>
+                       <li class="postImage viewObject">
+                           <div class="uploadedPhoto"><img src="pics/thumbs/<?php echo $element->getName(); ?>" /></div>
+                       </li>
+                    <?php
+                            endif;
+                            if($element instanceof Model_PostText):
+                    ?>
+                        <li class="postText viewObject">
+                            <p><?php echo $element->getText(); ?></p>
+                        </li>
+                    <?php
+                            endif;
+                            endforeach;
+                    ?>
+
+                </ul>
+
+
+            </div>
+
+            <div class="sideCol">
+
+                <ul id="sideColSortable" class="colSortable">
+                    <div style="height:20px;"></div>
+                    <?php
+                    ksort($data[1]);
+                    foreach($data[1] as $element):
+                        if($element instanceof Model_PostImage):
+                            ?>
+                            <li class="postImage viewObject">
+                                <div class="uploadedPhoto"><img src="pics/thumbs/<?php echo $element->getName(); ?>" /></div>
+                            </li>
+                            <?php
+                        endif;
+                        if($element instanceof Model_PostText):
+                            ?>
+                            <li class="postText viewObject">
+                                <p><?php echo $element->getText(); ?></p>
+                            </li>
+                            <?php
+                        endif;
+                    endforeach;
+                    ?>
+
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>

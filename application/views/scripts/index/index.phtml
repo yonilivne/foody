@@ -1,0 +1,55 @@
+<?php
+$entries = $this->entries;
+?>
+<!-- HEADER TOOLBAR -->
+
+<h1 class="head">
+    <div class="innerWrap">
+        <div class="inner">
+            <div class="button menu menuWrap">
+                <ul>
+                    <li title="New posts" class="{$filterBySel[fresh]} radio selected" name="ordByMenu">
+                        <a name="filterBy" class="radio MovePage">Fresh</a>
+                    </li>
+                    <li title="Popular posts" class="{$filterBySel[top]} radio" name="ordByMenu">
+                        <a name="filterBy" class="radio MovePage">Popular</a>
+                    </li>
+                    <li title="Foodies I follow" class="last {$filterBySel[popular]} radio" name="ordByMenu">
+                        <a name="filterBy" class="radio MovePage">Following</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</h1>
+
+<!-- CONTENT -->
+
+<div id="content">
+
+    <div class="recipesListWrap">
+
+        <div id="recipesList" class="recipesListView">
+            <?php
+                foreach($entries as $post):
+            ?>
+            <div class="item type41"><a href="post/view/id/<?php echo $post->getId(); ?>" class="itemInner"><div class="thumb" style="background:url(pics/thumbs_index/<?php echo substr($post->getThumb(),0,140); ?>)center center no-repeat;"></div><span><div class="name"><?php echo $post->getTitle();?></div><div class="desc"><?php echo $post->getDescription(); ?></div></span></a>
+                <div class="likeBtns"><a title="Like" class="button ico like"><div class="icon"></div><div class="text">1623</div></a><a title="Comment" class="button ico comment"><div class="icon"></div><div class="text">104</div></a><a title="Repost" class="button ico repost"><div class="icon"></div><div class="text">43</div></a></div>
+            </div>
+            <?php
+                endforeach;
+            ?>
+
+        </div>
+
+        <div style="margin-top:20px;" class="clear2">&nbsp</div>
+
+    </div>
+
+
+</div>
+
+
+<script type="text/javascript" src="js/index/index.js"></script>
+
+
